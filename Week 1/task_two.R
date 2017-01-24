@@ -1,0 +1,25 @@
+#####################
+## DATE: 1/23/2017 ##
+## TASK 2          ##
+#####################
+
+## I ALREADY FIXED THE DATA IN TASK ONE WHEN INPUTTING THE DATA
+
+## AWARD PREFERENCE FOR THE 5TH STUDENT:
+award[5]
+
+## BIRTH YEAR FOR THE 10TH STUDENT:
+birthYear[10]
+
+## PRINT ODD INTEGERS FROM 1 TO 100
+seq(1, 100, by = 2) ## USING SEQUENCE
+1:50 * 2 - 1 ## USING MATH
+
+## PRINT EVERY OTHER ODD INTEGER FROM 1 TO 100
+seq(1, 100, by = 4) ## EASY WAY
+seq(1, 100, by = 2)[seq(1, length(seq(1, 100, by = 2)), by = 2)] ## ANOTHER WAY USING SUBSETTING
+
+## BONUS ##
+
+## PRINT EVEN INTEGERS FROM 1 TO 100
+seq(0, 100, by = 2)

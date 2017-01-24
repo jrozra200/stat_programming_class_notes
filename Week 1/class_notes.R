@@ -1,0 +1,65 @@
+############################################
+## DATE: 1/23/2017                        ##
+## PURPOSE: THIS IS THE SCRIPT FROM CLASS ##
+############################################
+
+## RSTUDIO CAN DO CALCULATOR FUNCTIONS
+5 + 7
+6 + 12
+
+## WAYS TO ASSIGN A NUMBER TO A VARIABLE AND PRINT THE RESULTS
+height <- 72
+72 -> height
+height
+
+## DOING A BOOLEAN EVALUATION
+height == 72
+
+## CREATING A NUMERICAL VECTOR
+height <- c(72, 60, 54, 78, 62, 62, 80)
+height
+
+## CREATING A STRING VECTOR
+agecat <- c("old", "young", "young", "old", "old", "young", "old")
+agecat
+
+## LENGTH OF VECTORS
+length(height)
+length(agecat)
+
+## SEQUENCE OF VARIABLES (SHORTCUT)
+5:105
+1:100
+
+## INDEXES OF DATASETS
+height[3] ## PRINTS A SPECIFIC VALUE
+height[3] <- 45 ## REASSIGN A SPECIFIC VALUE
+
+## SUBSETTING DATA SYNTAX 
+hist(height[agecat == "old"])
+
+## USING THE SEQUENCE FUNCTION
+seq(from = 1, to = 100) ## COUNT OF INTEGERS FROM 1 TO 100
+seq(from = 1, to = 100, by = 2) ## COUNT OF INTEGERS FROM 1 TO 100, SKIPPING 2 EACH TIME
+seq(from = 1, to = 100, length = 5) ## GIVE AN EQUAL DISTANCE FOR 5 NUMBERS BETWEEN 1 & 100
+help(seq) ## GET HELP FOR THE SEQUENCE FUNCTION
+?seq ## ANOTHER WAY TO GET HELP FOR THE SEQUENCE FUNCTION
+seq(2, 12) ## COUNT OF INTEGERS FROM 2 TO 12
+seq(2, 12, 2) ## COUNT OF INTEGERS FROM 2 TO 12, BY = 2
+
+## USING THE REPEAT FUNCTION
+rep(10, 5) ## REPEAT THE NUMBER 10, 5 TIMES
+rep(c(60, 61), 3) ## REPEAT THE VECTOR 3 TIMES
+rep(c(60, 61), each = 3) ## REPEAT EACH NUMBER IN THE VECTOR THREE TIMES
+rep(c(60, 61), c(3, 3)) ## ANOTHER WAY TO SAY THE LINE ABOVE
+rep(1:10, 3) ## REPEAT 1:10, 3 TIMES
+rep(c("A", "B", "C"), each = 10) ## REPEAT EACH LETTER IN THE VECTOR 10 TIMES
+
+## PLAYING WITH MATHEMATICAL FUNCTIONS
+(1:50)^2 ## EXPONENTS
+c(1, 2, 3) + c(3, 2, 1) ## ADDING VECTORS
+
+## STATISTICAL FUNCTIONS
+mean(height) ## AVERAGE (DOES NOT HANDLE MISSING VALUES)
+mean(height, na.rm = TRUE) ## AVERAGE WITH EXCLUDING MISSING VALUES
+summary(height) ## FIVE NUMBER SUMMARY (WILL DESCRIBE NAs)
