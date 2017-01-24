@@ -1,0 +1,135 @@
+---
+title: "Homework 1"
+author: "Jacob Rozran"
+date: "1/24/2017"
+output: html_document
+---
+
+### Problem 0
+
+The code did run and all sections work fine.
+
+### Problem 1
+
+```{r prediet}
+prediet <- c(140, 160, 135, 120, 125, 165, 108, 130, 225, 140, 180)
+```
+The prediet variable has `r length(prediet)` values in it. 
+
+`r prediet`
+
+### Problem 2
+
+```{r postdiet}
+postdiet <- c(139, 155, 120, 118, 123, 155, 108, 129, 195, 142, 176)
+```
+
+The prediet variable has `r length(postdiet)` values in it. 
+
+`r postdiet`
+
+### Problem 3
+
+```{r calculate_weight_loss}
+lbs_lost <- postdiet - prediet
+```
+
+A person lost weight if the value is negative. Conversely, they gained wieght if it is positive.
+
+`r lbs_lost`
+
+### Problem 4
+
+```{r convert_to_kg}
+kg_lost <- lbs_lost * 2.2
+```
+
+After converting it to kgs, the loss/gain looks like this:
+
+`r kg_lost`
+
+### Problem 5
+
+Here are the statistics for the wieght loss in kilograms:
+
+* Mean: `r mean(kg_lost)`
+* Median: `r median(kg_lost)`
+* Minimum: `r max(kg_lost)` (which is actually weight gained)
+* Maximum: `r min(kg_lost)`
+
+And using the summary() command: 
+
+```{r summary_command}
+summary(kg_lost)
+```
+
+*Note: Because the "maximimum" lost is actually the most negative number, the sumamry is "flipped" here*
+
+### Problem 6
+
+The average weight loss for those patients who started the program under 150 pounts is: `r mean(kg_lost[prediet < 150])` kg
+
+### Problem 7
+
+```{r stemplot_kgs}
+stem(sort(kg_lost))
+```
+
+*Note: There is data missing from this plot, as it has dropped the decimal value - this is why it seems like the digits are out of order. Changing the scale in order to keep the decimal values in the plot elongates the plot and makes it less useful. To deal with this, I've replotted the data using lbs instead of kgs*
+
+```{r stemplot_lbs}
+stem(sort(kg_lost))
+```
+
+The data is normally distributed with one outlier skewing it negative. The center is around 2 pounds (4.4 kilograms) lost. The spread is `r max(lbs_lost) - min(lbs_lost)` pounds (`r max(kg_lost) - min(kg_lost)` kilograms). One person gained weight, one person didn't lose any weight, and one person lost a LOT of weight. The remaining lost a reasonable amount of weight. 
+
+The take home message is that on average the group lost 4.4 kgs. There was one outlier that skewed the actual mean negatively. The data is mostly normal.
+
+### Problem 8
+
+H~o~: µ >= 0
+H~a~: µ < 0
+
+Assumptions: 
+
+* The data are continuous
+* The data are representative of the population
+* The data are normally distributed
+
+```{r t_test}
+t.test(kg_lost, alternative = "less")
+```
+
+As 0.02572 is less than 0.05, we can reject the null hypothesis.
+
+We have enough evidence at the 0.05-level to reject the null hypothesis and conclude that the mean weight loss for the group is less than 0 (they did lose weight). 
+
+### Problem 9
+
+```{r marijuana_data_creation)}
+## CREATE THE DATA
+
+birth_weight <- c(rep("Low Birth Weight", 850 + 133), 
+                  rep("Normal Birth Weight", 10328 + 1113))
+pot_use <- c(rep("No Marijuana Use", 850), rep("Any Marijuana Use", 133), 
+             rep("No Marijuana Use", 10328), rep("Any Marijuana Use", 1113))
+
+table(birth_weight, pot_use)
+```
+
+H~o~: Marijuana use and birth weight are independent
+H~a~: Marijuana use and birth weight are NOT independent
+
+Assumptions: 
+
+* All cells have an expected value greater than 5 
+* The data are representative of the population
+* All observations are independent
+
+```{r marijuana_chi_sq_test}
+chisq.test(table(birth_weight, pot_use))
+```
+
+As 0.000175 is less than 0.05, we can reject the null hypothesis.
+
+We have strong evidence at the 0.05-level to reject the null hypothesis and conclude that there is an association between marijuana use and low birth weight. 
