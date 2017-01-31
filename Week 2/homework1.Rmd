@@ -1,0 +1,128 @@
+---
+title: "Homework 2"
+author: "Jacob Rozran"
+date: "1/31/2017"
+output: html_document
+---
+
+## PROBLEM 0
+
+Did you code work? Yes
+
+## PROBLEM 1
+
+```{r read_SAT_data}
+SATdat <- read.table("SAT Salary.txt")
+
+names(SATdat) <- c("state","expend","ratio","salary","frac","verbal","math", 
+                   "total")
+```
+
+## PROBLEM 2
+
+I would expect that as teachers make more, the SAT scores get higher. I would expect a positive correlation between SAT score and teacher salary.
+
+## PROBLEM 3
+
+```{r plot_score_vs_salary}
+reg_line <- lm(total ~ salary, data = SATdat)
+
+with(SATdat, plot(salary, total))
+abline(reg_line)
+```
+
+Exactly opposite of what I expected, the correlation between teacher salary and SAT score is negative. Thinking more about it - teachers with the higher scores may be effectively paid more (I haven't dug into the data); perhaps they live in lower cost-of-living areas and have more support to spend in the classroom. 
+
+## PROBLEM 4
+
+The model that is created is:
+
+Y~i~ = `r as.numeric(reg_line$coefficients[1])` - `r abs(as.numeric(reg_line$coefficients[2]))`x~i~, i = 1, 2,..., 50
+
+Where:
+
+* Y~i~ = Average SAT Score for the i^th^ state  
+* x~i~ = Average teacher salary for the i^th^ state  
+
+```{r regression}
+summary(reg_line)
+
+par(mfrow = c(2, 2))
+plot(reg_line)
+```
+
+To comment on the assumptions:
+
+1. based on the initial scatter plot we created, I would say that there is a linear relationship between average SAT score and average teacher salary. 
+2. Looking at the normal QQ plot, the data appear to be almost normal. There is some weird trend going on in the upper end that is potentially troublesome. 
+3. As we are only testing one variable, there is no issues with multi-collinearity in the independent variables.
+4. Looking at the residuals vs. fitted plot, I have some concerns about homoscedasticity - I would expect the residuals to be more evenly scattered. This assumption is likely violated, too.
+
+## PROBLEM 5
+
+```{r cut_data}
+SATdat$fracgrp <- cut(SATdat$frac, 
+                      breaks = c(min(SATdat$frac) - 1, 22, 49, max(SATdat$frac)), 
+                      labels = c("low", "medium", "high"))
+```
+
+## PROBLEM 6
+
+```{r plot_graphs}
+par(mfrow = c(1, 2))
+
+with(SATdat, boxplot(total ~ fracgrp, main = "total VS. fracgrp"))
+with(SATdat, boxplot(salary ~ fracgrp, main = "salary Vs. fracgrp"))
+```
+
+As the fraction of students taking the exam increases, the average score on the SAT decreases. Conversely, as the fraction of students taking the exam increases, the average teacher salary increases. 
+
+The model certainly should take the fraction of students into account - it is leading to a misudnerstanding in the data.
+
+## PROBLEM 7
+
+```{r create_another_plot}
+library(ggplot2)
+
+par(mfrow = c(1, 1))
+
+ggplot(SATdat, aes(x = salary, y = total, color = fracgrp)) + 
+        geom_point() + geom_smooth(method = lm, se = FALSE)
+```
+
+As salary increases in each group, the scores do go up. This is more true for the "high" fracgrp than it is for the "medium" and "low" fracgrps. This is more along the lines of what I would have expected - as mentioned in #2. Classic example of Simpson's Paradox.
+
+## PROBLEM 8
+
+H~o~: αβ~ij~ are equal for each i, j pair (there is not a significant interaction)
+H~a~: At least one αβ~ij~ differs (there is a significant interaction)
+
+```{r multiple_regression}
+mult_mod <- aov(total ~ salary + fracgrp + salary*fracgrp, data = SATdat)
+
+summary(mult_mod)
+```
+
+As 0.937 is not less than 0.05, we do not reject the null hypothesis.
+
+We have overwhelming evidence at the 0.05-level that there is not a significant interaction between fracgrp and salary. I will remove it from the model and rerun the analysis.
+
+H~o~: β~1~ = β~2~ = β~3~ 
+H~a~: At least one β~j~ differs
+
+```{r multiple_regression2}
+mult_mod <- aov(total ~ salary + fracgrp, data = SATdat)
+
+summary(mult_mod)
+```
+
+As 6.46e-15 is much less than 0.05, we reject the null and conclude the alternative.
+
+We have overwhelming evidence at the 0.05-level to reject the null hypothesis and conclude that at least one β~j~, the effect (slope) from fracgrp, differs from the others. To figure out which is different, we can run a multiple comparison.
+
+```{r multiple_comparisons}
+TukeyHSD(mult_mod, "fracgrp", ordered = TRUE)
+plot(TukeyHSD(mult_mod, "fracgrp"))
+```
+
+As you can see in the plot above, the slopes for the medium and high groups are statistically equal. The slope for the low group is different from that of medium and high. 
