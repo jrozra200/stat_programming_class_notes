@@ -1,0 +1,13 @@
+This is data for use with the R Introduction Class
+name gender age height weight Verbal.SAT Math.SAT
+John M 17 70 160 450 550
+Mary F 18 64 135 520 700
+Steve M 26 74 220 420 460
+Fred M 17 64 120 600 600
+Joan F 17 62 105 760 790
+John M 17 72 185 520 480
+Albert M 18 67 190 580 620
+Linda F 16 66 130 680 740
+Michael M 17 71 155 540 800
+Michelle F 17 64 115 720 560
+

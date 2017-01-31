@@ -1,0 +1,13 @@
+	This is a data set for use with the R class
+	height	age		HIV
+	60		15		1
+	67		14		0
+	65		14		0
+	70		17		1
+	59		13		1
+	61		15		1
+	59		14		0
+	66		16		1
+	NA		15		0
+	62		16		1
+
