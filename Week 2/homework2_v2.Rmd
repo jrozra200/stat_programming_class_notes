@@ -1,0 +1,92 @@
+---
+title: "Homework 2 V2"
+author: "Jacob Rozran"
+date: "2/3/2017"
+output: html_document
+---
+
+## PROBLEM 0
+
+Did you code work? Yes
+
+## PROBLEM 1
+
+```{r read_in_data}
+library(xlsx)
+
+bbsal <- read.xlsx("Baseball Salaries - Modified.xlsx", sheetIndex = 1)
+```
+
+## PROBLEM 2
+
+```{r verify_data}
+head(bbsal)
+
+dim(bbsal)
+
+str(bbsal)
+```
+
+## PROBLEM 3
+
+```{r table_data}
+table(bbsal$Year)
+```
+
+## PROBLEM 4
+
+``` {r find_bad_data}
+bbsal[bbsal$Salary < 1000 & bbsal$Salary > 0, ]
+```
+
+## PROBLEM 5
+
+```{r fix_bad_data}
+bbsal$Salary[bbsal$Salary < 1000 & bbsal$Salary > 0] <- (
+        bbsal$Salary[bbsal$Salary < 1000 & bbsal$Salary > 0] * 1000)
+```
+
+## PROBLEM 6
+
+```{r update_salary}
+bbsal$Salary_2013dollars = (1.027^(2013 - bbsal$Year) * bbsal$Salary)
+```
+
+## PROBLEM 7
+
+```{r update_salary_w_real_data}
+inflation_data <- read.csv("inflation_rates.csv") ## READ IN DATA
+inflation_data <- inflation_data[, c(1, 14)] ## JUST TAKE THE YEAR AND AVERAGE
+inflation_data$Ave <- gsub("%", "", inflation_data$Ave) ## REMOVE THE PERCENT SIGN
+inflation_data$Ave <- as.numeric(inflation_data$Ave) / 100 ## CHANGE IT TO A PROPER VALUE
+inflation_data$Ave <- 1 + inflation_data$Ave
+
+inflation_data$Year <- as.numeric(inflation_data$Year)
+
+
+for(i in 1:dim(bbsal)[1]){
+        bbsal$Salary_2013dollars_real[i] <- bbsal$Salary[i]
+        
+        if(bbsal$Year[i] < 2013){
+                for(j in bbsal$Year[i]:2012){
+                        bbsal$Salary_2013dollars_real[i] <- (
+                                bbsal$Salary_2013dollars_real[i] * 
+                                        inflation_data$Ave[inflation_data$Year == j])
+                }
+        } 
+        
+}
+```
+
+## PROBLEM 8
+
+```{r summary_by_league}
+summary(bbsal$Salary_2013dollars_real[bbsal$League == "AL"])
+summary(bbsal$Salary_2013dollars_real[bbsal$League == "NL"])
+
+with(bbsal, boxplot(Salary_2013dollars_real ~ League))
+```
+
+This shows that the American League pays, on average, a bit more than the National League. The lower quartile for National League is a bit higher than the American League, telling me that the lowest paid players in the National League are paid better than the lowest paid players in the American League. After that, the American Leauge pays its players better. 
+
+Looking at the boxplot, you can see that there are a lot of outliers - these are the superstar players that are paid an astronimical amount compared to the average players. 
