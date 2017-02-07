@@ -88,3 +88,71 @@ while(i <= length(HIVdata$height)){
         }
         i <- i + 1
 }
+
+## GRAPHICS
+
+hist(colDat$age) ## BASIC HISTOGRAM 
+hist(colDat$age, main = "My First Histogram", xlab = "Age of SAT Students") ## BASIC HISTOGRAM WITH LABELS
+hist(colDat$age, main = "My First Histogram", xlab = "Age of SAT Students", breaks = 14:27) ## HISTOGRAM WITH BREAKS
+hist(colDat$age, main = "My First Histogram", xlab = "Age of SAT Students", nclass = 10) ## HISTOGRAM WITH BINS
+hist(bbsal$Salary, nclass = 40) ## ANOTHER EXAMPLE OF SPECIFYING THE NUMBER OF BINS
+
+boxplot(bbsal$Salary_2013dollars_real) ## BOXPLOT
+boxplot(log(bbsal$Salary_2013dollars_real + 1), ## BOXPLOT WITH TITLES
+        main = "Log xform of Baseball Salaries \nInflation Adjusted to 2013 dollars") 
+boxplot(log(bbsal$Salary_2013dollars_real + 1), ## BOXPLOT WITH TITLES
+        main = "Log xform of Baseball Salaries \nInflation Adjusted to 2013 dollars",
+        ylab = "Log xform Salary in 2013 $") 
+boxplot(log(bbsal$Salary_2013dollars_real + 1) ~ bbsal$League, ## BOXPLOT WITH TITLES BY LEAGUE
+        main = "Log xform of Baseball Salaries \nInflation Adjusted to 2013 dollars",
+        ylab = "Log xform Salary in 2013 $") 
+
+plot(colDat$Math.SAT, colDat$Verbal.SAT) ## SCATTER PLOT
+plot(colDat$Verbal.SAT ~ colDat$Math.SAT) ## ANOTHER WAY TO DO THE SAME THING
+plot(colDat$Verbal.SAT ~ colDat$Math.SAT, main = "Verbal SAT by Math SAT", 
+     xlab = "Math SAT", ylab = "Verbal SAT") ## WITH TITLES
+plot(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"], 
+     main = "Verbal SAT by Math SAT", 
+     xlab = "Math SAT", ylab = "Verbal SAT") ## WITH TITLES MALE ONLY
+plot(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"], 
+     main = "Verbal SAT by Math SAT", 
+     xlab = "Math SAT", ylab = "Verbal SAT", pch = "M", col = "pink") ## MALE WITH SPECIAL CHARACTER
+plot(colDat$Verbal.SAT[colDat$gender == "F"] ~ colDat$Math.SAT[colDat$gender == "F"], 
+     main = "Verbal SAT by Math SAT", 
+     xlab = "Math SAT", ylab = "Verbal SAT", pch = "F", col = "blue") ## FEMALE WITH SPECIAL CHARACTER
+
+plot(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"], 
+     main = "Verbal SAT by Math SAT", xlab = "Math SAT", ylab = "Verbal SAT", 
+     pch = "M", col = "pink") ## MALE WITH SPECIAL CHARACTER
+points(colDat$Verbal.SAT[colDat$gender == "F"] ~ colDat$Math.SAT[colDat$gender == "F"], 
+     pch = "F", col = "blue") ## FEMALE WITH SPECIAL CHARACTER
+
+## GETTING THE PLOT LOOKING BETTER
+plot(colDat$Verbal.SAT ~ colDat$Math.SAT, type = "n", xlab = "Math SAT Score", 
+     ylab = "Verbal SAT Score")
+points(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"], 
+     main = "Verbal SAT by Math SAT", xlab = "Math SAT", ylab = "Verbal SAT", 
+     pch = "M", col = "pink") ## MALE WITH SPECIAL CHARACTER
+points(colDat$Verbal.SAT[colDat$gender == "F"] ~ colDat$Math.SAT[colDat$gender == "F"], 
+       pch = "F", col = "blue") ## FEMALE WITH SPECIAL CHARACTER
+abline(lm(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"]), 
+       col = "pink", lty = 1)
+abline(lm(colDat$Verbal.SAT[colDat$gender == "F"] ~ colDat$Math.SAT[colDat$gender == "F"]), 
+       col = "blue", lty = 2)
+legend("topleft", pch = "MF", col = c("pink", "blue"), lty = c(1:2), 
+       legend = c("MALES", "FEMALES"), cex = 0.8)
+text(600, 750, "R is cool", col = "red")
+
+## PLOTTING SIDE BY SIDE
+par(mfrow = c(1, 2))
+plot(colDat$Verbal.SAT[colDat$gender == "M"] ~ colDat$Math.SAT[colDat$gender == "M"], 
+       main = "Verbal SAT by Math SAT", xlab = "Math SAT", ylab = "Verbal SAT", 
+       pch = "M", col = "pink") ## MALE WITH SPECIAL CHARACTER
+plot(colDat$Verbal.SAT[colDat$gender == "F"] ~ colDat$Math.SAT[colDat$gender == "F"], 
+     main = "Verbal SAT by Math SAT", xlab = "Math SAT", ylab = "Verbal SAT", 
+     pch = "F", col = "blue") ## FEMALE WITH SPECIAL CHARACTER
+
+## CHECKING THE ASSUMPTIONS OF LINEAR REGRESSION
+par(mfrow = c(2, 2))
+plot(lm(Verbal.SAT ~ Math.SAT, data = colDat))
+
