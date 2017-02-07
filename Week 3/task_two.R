@@ -8,8 +8,13 @@ filename <- paste("~/Desktop/MAT 7500 - Statistical Programming/Week 2/prac2.",
 colDat <- read.table(filename, skip = 1, header = TRUE) ## SKIP THE FIRST LINE
                                                         ## NEXT LINE IS HEADERS
 
-## USING VECTOR MANIPULATION
-colDat$type_of_person <- ifelse(is.na(colDat$Verbal.SAT) | is.na(colDat$Math.SAT), 
+## USING BASIC VECTOR MANIPULATION
+colDat$type_of_person[colDat$Verbal.SAT == colDat$Math.SAT] <- "Equal"
+colDat$type_of_person[colDat$Verbal.SAT > colDat$Math.SAT] <- "Verbal"
+colDat$type_of_person[colDat$Verbal.SAT < colDat$Math.SAT] <- "Math"
+
+## USING VECTOR MANIPULATION WITH IF STATEMENTS
+colDat$type_of_person_v2 <- ifelse(is.na(colDat$Verbal.SAT) | is.na(colDat$Math.SAT), 
                                 ifelse(is.na(colDat$Verbal.SAT) & is.na(colDat$Math.SAT), 
                                        "Missing Math & Verbal Score", 
                                        ifelse(is.na(colDat$Verbal.SAT) & !is.na(colDat$Math.SAT), 
@@ -20,7 +25,7 @@ colDat$type_of_person <- ifelse(is.na(colDat$Verbal.SAT) | is.na(colDat$Math.SAT
 
 ## USING A FOR LOOP
 for(i in 1:dim(colDat)[1]){
-        colDat$type_of_person_2[i] <- if(is.na(colDat$Verbal.SAT[i]) | is.na(colDat$Math.SAT[i])){
+        colDat$type_of_person_3[i] <- if(is.na(colDat$Verbal.SAT[i]) | is.na(colDat$Math.SAT[i])){
                 if(is.na(colDat$Verbal.SAT[i]) & is.na(colDat$Math.SAT[i])){
                         "Missing Math & Verbal Score"
                 } else if (is.na(colDat$Verbal.SAT[i]) & !is.na(colDat$Math.SAT[i])){
