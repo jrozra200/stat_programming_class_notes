@@ -81,20 +81,51 @@ The model certainly should take the fraction of students into account - it is le
 
 ## PROBLEM 7
 
-```{r create_another_plot}
+### With R Base Graphics
+
+```{r create_another_plot_base}
+par(mfrow = c(1, 1))
+
+plot(SATdat$total ~ SATdat$salary, type = "n", 
+     main = "Total SAT Score BY Salary\nGrouped by frcgrp", xlab = "Salary ($)",
+     ylab = "Total SAT Score")
+points(SATdat$total[SATdat$fracgrp == "low"] ~ SATdat$salary[SATdat$fracgrp == "low"],
+       col = "red")
+abline(lm(SATdat$total[SATdat$fracgrp == "low"] ~ SATdat$salary[SATdat$fracgrp == "low"]),
+       col = "red")
+points(SATdat$total[SATdat$fracgrp == "medium"] ~ 
+               SATdat$salary[SATdat$fracgrp == "medium"],
+       col = "green")
+abline(lm(SATdat$total[SATdat$fracgrp == "medium"] ~ 
+               SATdat$salary[SATdat$fracgrp == "medium"]),
+       col = "green")
+points(SATdat$total[SATdat$fracgrp == "high"] ~ SATdat$salary[SATdat$fracgrp == "high"],
+       col = "blue")
+abline(lm(SATdat$total[SATdat$fracgrp == "high"] ~ 
+                  SATdat$salary[SATdat$fracgrp == "high"]),
+       col = "blue")
+legend("topright", pch = c(1, 1, 1), col = c("red", "green", "blue"), legend = c("low", "medium", "high"), lty = c(1, 1, 1), cex = 0.8)
+```
+
+### With GGPLOT
+
+```{r create_another_plot_with_ggplot}
 library(ggplot2)
 
 par(mfrow = c(1, 1))
 
 ggplot(SATdat, aes(x = salary, y = total, color = fracgrp)) + 
-        geom_point() + geom_smooth(method = lm, se = FALSE)
+        geom_point() + geom_smooth(method = lm, se = FALSE) + 
+        ggtitle("Total SAT Score BY Salary", 
+                subtitle = "Grouped by frcgrp") +
+        labs(x = "Salary ($)", y = "Total SAT Score")
 ```
 
 As salary increases in each group, the scores do go up. This is more true for the "high" fracgrp than it is for the "medium" and "low" fracgrps. This is more along the lines of what I would have expected - as mentioned in #2. Classic example of Simpson's Paradox.
 
 ## PROBLEM 8
 
-H~o~: αβ~ij~ are equal for each i, j pair (there is not a significant interaction)
+H~o~: αβ~ij~ are equal for each i, j pair (there is not a significant interaction)  
 H~a~: At least one αβ~ij~ differs (there is a significant interaction)
 
 ```{r multiple_regression}
@@ -107,7 +138,7 @@ As 0.937 is not less than 0.05, we do not reject the null hypothesis.
 
 We have overwhelming evidence at the 0.05-level that there is not a significant interaction between fracgrp and salary. I will remove it from the model and rerun the analysis.
 
-H~o~: β~1~ = β~2~ = β~3~ 
+H~o~: β~1~ = β~2~ = β~3~  
 H~a~: At least one β~j~ differs
 
 ```{r multiple_regression2}
