@@ -1,6 +1,7 @@
 ods html close; ods html;
 
 options pagesize=72 linesize=52 pageno=1 nodate;
+title 'problem 3';
 
 PROC FORMAT;
 	value malefemf 1='Male' 2='Female';
