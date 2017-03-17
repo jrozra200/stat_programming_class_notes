@@ -1,0 +1,240 @@
+---
+title: "R Project"
+author: "Jacob Rozran"
+date: "2/28/2017"
+output: html_document
+---
+
+# PROBLEM 1
+
+Read in the data.
+
+```{r read_data}
+library(readxl)
+
+we_dat <- read_excel("Philadelphia Temperatures - ALL.xlsx")
+
+summary(we_dat)
+```
+
+# PROBLEM 2
+
+Data manipulation.
+
+## PART A
+
+Change values of -999 to NA, as they were not collected. From the summary above, we can see that High, Low, Precip, and Snow have values of -999; the other variables/columns do not.
+
+```{r minusnineninenine}
+we_dat$High[we_dat$High == -999] <- NA
+we_dat$Low[we_dat$Low == -999] <- NA
+we_dat$Precip[we_dat$Precip == -999] <- NA
+we_dat$Snow[we_dat$Snow == -999] <- NA
+
+summary(we_dat)
+```
+
+## PART B
+
+As the only value less than 0 is -1, indicating a trace amount of snow or precipitation, I am changing it to a 1. This indicates a tenth inch of snow and hundredth inch of precipitation. That seems like a "trace" to me.
+
+```{r precip_snow}
+we_dat$Precip[we_dat$Precip < 0] <- 1
+we_dat$Snow[we_dat$Snow < 0] <- 1
+
+summary(we_dat)
+```
+
+## PART C
+
+```{r precip_snow_conversion}
+we_dat$Precip_inches <- we_dat$Precip / 100
+we_dat$Snow_inches <- we_dat$Snow / 10
+
+summary(we_dat)
+```
+
+# PROBLEM 3
+
+Plot the daily highs and lows on the same plot. 
+
+```{r timeplot_high_low}
+we_dat$Date <- as.Date(paste(we_dat$Year, "-", we_dat$Month, "-", we_dat$Day, 
+                             sep = ""))
+
+plot(x = we_dat$Date, y = we_dat$High, type = "l", col = "red", 
+     ylim = c(min(we_dat$Low, na.rm = TRUE), max(we_dat$High, na.rm = TRUE)), 
+     main = "High & Low Temperatures Over Time", xlab = "Date", 
+     ylab = "Temperature (°F)")
+points(x = we_dat$Date, y = we_dat$Low, type = "l", col = "blue")
+legend("bottomright", lty = c(1, 1), col = c("red", "blue"), 
+       legend = c("High", "Low"), cex = 0.8)
+```
+
+There is not much you can tell in terms of temperature trend from this graph. There seems to be a few periods of higher low temperatures in the 1930's. There also seems to be a recent trend of higher low temperatures in the 1980's and 1990's. High temperatures seem more or less constant over time.
+
+# PROBLEM 4
+
+Plot the yearly minimum, maximum, and average low and high temperature per year. 
+
+```{r summarizing_per_year}
+library(plyr)
+
+we_dat_year <- ddply(we_dat, .(Year), summarize, min_low = min(Low, na.rm = TRUE),
+                     mean_low = mean(Low, na.rm = TRUE), 
+                     max_high = max(High, na.rm = TRUE), 
+                     mean_high = mean(High, na.rm = TRUE))
+
+we_dat_year$min_low[is.nan(we_dat_year$min_low) | is.infinite(we_dat_year$min_low)] <- NA
+we_dat_year$mean_low[is.nan(we_dat_year$mean_low) | is.infinite(we_dat_year$mean_low)] <- NA
+we_dat_year$mean_high[is.nan(we_dat_year$mean_high) | is.infinite(we_dat_year$mean_high)] <- NA
+we_dat_year$max_high[is.nan(we_dat_year$max_high) | is.infinite(we_dat_year$max_high)] <- NA
+
+plot(x = we_dat_year$Year, y = we_dat_year$min_low, type = "l", col = "blue", 
+     ylim = c(min(we_dat_year$min_low, na.rm = TRUE), max(we_dat_year$max_high, na.rm = TRUE)),
+     main = "Minimum, Maximum, & Average Low & High Temperature Per Year", 
+     ylab = "Temperature (°F)", xlab = "Year")
+points(x = we_dat_year$Year, y = we_dat_year$mean_low, type = "l", col = "purple", lty = 2)
+points(x = we_dat_year$Year, y = we_dat_year$mean_high, type = "l", col = "pink", lty = 2)
+points(x = we_dat_year$Year, y = we_dat_year$max_high, type = "l", col = "red", lty = 1)
+legend("topleft", lty = c(1, 1, 2, 2), col = c("red", "blue", "pink", "purple"), 
+       legend = c("Max High", "Max Low", "Mean High", "Mean Low"), cex = 0.8)
+```
+
+# PROBLEM 5
+
+Analysis on the data from March 6^th^. 
+
+## PART A
+
+Plot the min and max temp per year on the same plot.
+
+```{r summarizing_march_6}
+we_dat_0306 <- we_dat[we_dat$Month == 3 & we_dat$Day == 6, ]
+
+plot(x = we_dat_0306$Year, y = we_dat_0306$Low, type = "l", col = "blue", 
+     ylim = c(min(we_dat_0306$Low, na.rm = TRUE), max(we_dat_0306$High, na.rm = TRUE)),
+     main = "Minimum & MaximumTemperature Per Year On March 6", 
+     ylab = "Temperature (°F)", xlab = "Year")
+points(x = we_dat_0306$Year, y = we_dat_0306$High, type = "l", col = "red")
+legend("topleft", lty = c(1, 1), col = c("red", "blue"), legend = c("High", "Low"), cex = 0.8)
+```
+
+The high and low temperature on March 6^th^ is much more volitile than that of the high and low temperature for the entire year. It is possible to get freezing, winter temperatures or moderate, spring temperatures during this time of the year. Over the course of the year, however, high and low temperatures tend to be similar from year to year. 
+
+## PART B
+
+Create histograms of High and Low temperature and Precipitation and Snow totals.
+
+```{r hist_plot}
+par(mfrow = c(2, 2))
+
+hist(we_dat_0306$High, main = "Histogram of High Temperature", xlab = "High Temperature (°F)")
+hist(we_dat_0306$Low, main = "Histogram of Low Temperature", xlab = "Low Temperature (°F)")
+hist(we_dat_0306$Precip_inches, main = "Histogram of Precipitation Totals", xlab = "Precipitation (inches)")
+hist(we_dat_0306$Snow_inches, main = "Histogram of Snow Totals", xlab = "Snow (inches)")
+```
+
+The high temperature is almost normally distributed - probably positively skewed, though. The higher-than-the-mean temperatures happen more frequently the lower side. The mean is in the 45-50°F range. There is a range of around 55°F. 
+
+The low temperature has a very interesting distribution - there are some lower temperature days, but at around 25°F, there is a large step up. The average is around 30°F and there is less of a range of temperatures than the highs: about 45°F. 
+
+Most days have no precipitation or snow. Rain (preciptiation) happens more often than snow, though. When it does snow, it is up to 7 inches. When it rains, it is up to 2 inches.
+
+## PART C
+
+Create a 90% Confidence Interval for mean using a t-distribution.
+
+90% CI: x̅ ± t~α/2,N-1~(s / sqrt(N))
+
+```{r t_CI}
+upper_high <- (mean(we_dat_0306$High, na.rm = TRUE) + 
+                       qt(0.05, 
+                          df = length(we_dat_0306$High[!is.na(we_dat_0306$High)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$High, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$High[!is.na(we_dat_0306$High)]))))
+lower_high <- (mean(we_dat_0306$High, na.rm = TRUE) - 
+                       qt(0.05, 
+                          df = length(we_dat_0306$High[!is.na(we_dat_0306$High)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$High, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$High[!is.na(we_dat_0306$High)]))))
+
+upper_low <- (mean(we_dat_0306$Low, na.rm = TRUE) + 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Low[!is.na(we_dat_0306$Low)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Low, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Low[!is.na(we_dat_0306$Low)]))))
+lower_low <- (mean(we_dat_0306$Low, na.rm = TRUE) - 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Low[!is.na(we_dat_0306$Low)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Low, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Low[!is.na(we_dat_0306$Low)]))))
+
+upper_precip <- (mean(we_dat_0306$Precip_inches, na.rm = TRUE) + 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Precip_inches[!is.na(we_dat_0306$Precip_inches)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Precip_inches, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Precip_inches[!is.na(we_dat_0306$Precip_inches)]))))
+lower_precip <- (mean(we_dat_0306$Precip_inches, na.rm = TRUE) - 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Precip_inches[!is.na(we_dat_0306$Precip_inches)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Precip_inches, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Precip_inches[!is.na(we_dat_0306$Precip_inches)]))))
+
+upper_snow <- (mean(we_dat_0306$Snow_inches, na.rm = TRUE) + 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Snow_inches[!is.na(we_dat_0306$Snow_inches)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Snow_inches, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Snow_inches[!is.na(we_dat_0306$Snow_inches)]))))
+lower_snow <- (mean(we_dat_0306$Snow_inches, na.rm = TRUE) - 
+                       qt(0.05, 
+                          df = length(we_dat_0306$Snow_inches[!is.na(we_dat_0306$Snow_inches)]) - 1, 
+                          lower.tail = FALSE) * 
+                       (sd(we_dat_0306$Snow_inches, na.rm = TRUE) / 
+                                sqrt(length(we_dat_0306$Snow_inches[!is.na(we_dat_0306$Snow_inches)]))))
+```
+
+90% CI for High Temp (°F) mean: (`r round(lower_high, 4)`, `r round(upper_high, 4)`)  
+90% CI for Low Temp (°F) mean: (`r round(lower_low, 4)`, `r round(upper_low, 4)`)  
+90% CI for Snow Total (inches) mean: (`r round(lower_snow, 4)`, `r round(upper_snow, 4)`)  
+90% CI for Precip Total (inches) mean: (`r round(lower_precip, 4)`, `r round(upper_precip, 4)`)  
+
+## PART D 
+
+Create a 90% for median using bootstrap sampling.
+
+```{r bootstrap}
+high_samples <- replicate(10000, sample(we_dat_0306$High[!is.na(we_dat_0306$High)], 
+                                        replace = TRUE))
+high_means <- apply(high_samples, 2, median)
+
+low_samples <- replicate(10000, sample(we_dat_0306$Low[!is.na(we_dat_0306$Low)], 
+                                        replace = TRUE))
+low_means <- apply(low_samples, 2, median)
+
+precip_samples <- replicate(10000, sample(we_dat_0306$Precip_inches[!is.na(we_dat_0306$Precip_inches)], 
+                                        replace = TRUE))
+precip_means <- apply(precip_samples, 2, median)
+
+snow_samples <- replicate(10000, sample(we_dat_0306$Snow_inches[!is.na(we_dat_0306$Snow_inches)], 
+                                        replace = TRUE))
+snow_means <- apply(snow_samples, 2, median)
+```
+
+90% CI for High Temp (°F) median: (`r round(quantile(high_means, 0.05), 4)`, `r round(quantile(high_means, 0.95), 4)`)  
+90% CI for Low Temp (°F) median: (`r round(quantile(low_means, 0.05), 4)`, `r round(quantile(low_means, 0.95), 4)`)  
+90% CI for Snow Total (inches) median: (`r round(quantile(snow_means, 0.05), 4)`, `r round(quantile(snow_means, 0.95), 4)`)  
+90% CI for Precip Total (inches) median: (`r round(quantile(precip_means, 0.05), 4)`, `r round(quantile(precip_means, 0.95), 4)`)  
+
+## PART E
+
+The median is best for the highly skewed variables: snow and precipitation totals. On any given day, you'd expect the snow and precipitation totals to be closer to the median (~0), than the mean. 
+
+The mean and the median are very similar for the temperature variables as the data is not _that_ skewed.
