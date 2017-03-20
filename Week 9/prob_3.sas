@@ -9,7 +9,6 @@ PROC IMPORT
 	DBMS = XLSX REPLACE; 
 	SHEET = 'Sheet1';
 	
-
 run;
 
 PROC IMPORT 
@@ -108,4 +107,57 @@ run;
 PROC FREQ DATA = merged_data_v3;
 	TABLE source / nocol nopct;
 
+run;
+
+/* PROBLEM 4 */
+/* PART A */
+
+PROC IMPORT 
+	OUT = BMI_data
+	DATAFILE = '\\Client\C$\Users\jrozra200\Desktop\MAT 7500 - Statistical Programming\Week 9\BMI Scores.xlsx' 
+	DBMS = XLSX REPLACE; 
+	SHEET = 'Sheet1'; 
+
+run;
+
+PROC SORT DATA = BMI_data;
+	BY Patient Date;
+
+run;
+
+PROC PRINT DATA = BMI_data;
+
+run;
+
+/* PART B */
+
+DATA BMI_first;
+	SET BMI_data; 
+	BY Patient Date;
+	IF first.Patient THEN firstbmi = 1; 
+	ELSE firstbmi = 0;
+
+run;
+
+
+DATA BMI_first_2;
+	SET BMI_first;
+	WHERE firstbmi = 1;
+	DROP firstbmi Date;
+	RENAME BMI = firstbmi;
+run;
+
+PROC PRINT DATA = BMI_first_2;
+run;
+
+DATA BMI_data_v2;
+	MERGE BMI_data BMI_first_2;
+	BY Patient;
+	LENGTH delbmi $8.;
+	IF firstbmi = BMI THEN delbmi = "Same";
+	ELSE IF firstbmi > BMI THEN delbmi = "Increase";
+	ELSE delbmi = "Decrease";
+run;
+
+PROC PRINT DATA = BMI_data_v2;
 run;
