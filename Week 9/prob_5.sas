@@ -64,3 +64,7 @@ run;
 
 PROC PRINT DATA = men_wom;
 run;
+
+PROC GPLOT DATA = men_wom;
+	PLOT weight * height = sex;
+run;
