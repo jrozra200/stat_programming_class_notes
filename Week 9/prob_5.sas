@@ -56,18 +56,11 @@ DATA men_wom;
 				sex = "FEMALE";
 				height = RAND("Normal", 65, 2.5);
 			END;
+		weight = -202 + (5.26 * height) + RAND("Normal", 0, 27);
 		OUTPUT;
 	END;
 	DROP i;
 run;
 
 PROC PRINT DATA = men_wom;
-run;
-
-DATA men_wom_2;
-	SET men_wom;
-	weight = -202 + (5.26 * height) + RAND("Normal", 0, 27);
-run;
-
-PROC PRINT DATA = men_wom_2;
 run;
