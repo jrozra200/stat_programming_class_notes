@@ -182,3 +182,67 @@ PROC BOXPLOT DATA = stud_data_s1;
 	TITLE "BOXPLOT OF SYSTOLIC BP BY SMOKING STATUS";
 	PLOT SYS_BP * SMOKE;
 run;
+
+/* PROBLEM 3 */
+
+ods html close; ods html;
+
+PROC IMPORT 
+	OUT = stud_data_s1 
+	DATAFILE = '\\Client\C$\Users\jrozra200\Desktop\MAT 7500 - Statistical Programming\Week 3\HHSTUDY2.xls'
+	DBMS =  XLS REPLACE;
+	SHEET = 'HHSTUDY2';
+	
+run;
+
+/* PART A */
+
+DATA stud_data_s2;
+	SET stud_data_s1;
+	IF AGE <= 49 THEN AGE_CAT = "40s";
+	ELSE IF AGE <= 59 THEN AGE_CAT = "50s";
+	ELSE AGE_CAT = "60s";
+run;
+
+/* PART B */
+
+PROC FREQ DATA = stud_data_s2;
+	TABLE AGE_CAT * AGE / list;
+run;
+
+/* PART C I */
+
+PROC TABULATE DATA = stud_data_s2;
+	CLASS SMOKE PHYS_ACT;
+	TABLE SMOKE, PHYS_ACT;
+run;
+
+/* PART C II */
+
+PROC TABULATE DATA = stud_data_s2;
+	CLASS AGE_CAT SMOKE PHYS_ACT;
+	TABLE AGE_CAT, SMOKE, PHYS_ACT;
+run;
+
+/* PART C III */
+
+PROC TABULATE DATA = stud_data_s2;
+	CLASS SMOKE PHYS_ACT;
+	VAR POND_IDX;
+	TABLE SMOKE, PHYS_ACT * POND_IDX * (MEAN STDDEV);
+run;
+
+/* PART D */
+
+PROC SORT DATA = stud_data_s2;
+	BY EDUC;
+run;
+
+PROC MEANS DATA = stud_data_s2 MEAN STDDEV;
+	VAR CHOL;
+	BY EDUC;
+	OUTPUT OUT=mean_data;
+run;
+
+PROC PRINT DATA = mean_data;
+run;
