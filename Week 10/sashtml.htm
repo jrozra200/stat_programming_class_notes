@@ -1,0 +1,2849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>SAS Output</title>
+<style type="text/css">
+<!--
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">10 Observations Plotted from the N(100, 15) distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<div class="c proctitle">Variable:  obs</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Moments">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Moments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">N</th>
+<td class="r data">10</td>
+<th class="l rowheader" scope="row">Sum Weights</th>
+<td class="r data">10</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">98.8709102</td>
+<th class="l rowheader" scope="row">Sum Observations</th>
+<td class="r data">988.709102</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">21.5051127</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">462.46987</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Skewness</th>
+<td class="r data">0.46250981</td>
+<th class="l rowheader" scope="row">Kurtosis</th>
+<td class="r data">0.03608465</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Uncorrected SS</th>
+<td class="r data">101916.798</td>
+<th class="l rowheader" scope="row">Corrected SS</th>
+<td class="r data">4162.22883</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Coeff Variation</th>
+<td class="r data">21.7506976</td>
+<th class="l rowheader" scope="row">Std Error Mean</th>
+<td class="r data">6.80051373</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX1"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Basic Measures of Location and Variability">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Statistical Measures</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location</th>
+<th class="c b header" colspan="2" scope="colgroup">Variability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">98.87091</td>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">21.50511</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Median</th>
+<td class="r data">96.44431</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">462.46987</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mode</th>
+<td class="r data">.</td>
+<th class="l rowheader" scope="row">Range</th>
+<td class="r data">71.19839</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="l rowheader" scope="row">Interquartile Range</th>
+<td class="r data">24.37406</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX2"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Tests For Location">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests&nbsp;for&nbsp;Location:&nbsp;Mu0=0</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Student&#39;s t</th>
+<th class="l rowheader" scope="row">t</th>
+<td class="r data">14.53874</td>
+<th class="l rowheader" scope="row">Pr &gt; |t|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Sign</th>
+<th class="l rowheader" scope="row">M</th>
+<td class="r data">5</td>
+<th class="l rowheader" scope="row">Pr &gt;= |M|</th>
+<td class="r data">0.0020</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Signed Rank</th>
+<th class="l rowheader" scope="row">S</th>
+<td class="r data">27.5</td>
+<th class="l rowheader" scope="row">Pr &gt;= |S|</th>
+<td class="r data">0.0020</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX3"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Quantiles">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Quantiles&nbsp;(Definition&nbsp;5)</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Level</th>
+<th class="r b header" scope="col">Quantile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">100% Max</th>
+<td class="r data">136.4571</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">99%</th>
+<td class="r data">136.4571</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">95%</th>
+<td class="r data">136.4571</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">90%</th>
+<td class="r data">132.7605</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">75% Q3</th>
+<td class="r data">107.9927</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">50% Median</th>
+<td class="r data">96.4443</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">25% Q1</th>
+<td class="r data">83.6186</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">10%</th>
+<td class="r data">72.7110</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">5%</th>
+<td class="r data">65.2587</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">1%</th>
+<td class="r data">65.2587</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">0% Min</th>
+<td class="r data">65.2587</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX4"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Extreme Observations">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Observations</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">65.2587</td>
+<td class="r data">1</td>
+<td class="r data">98.5831</td>
+<td class="r data">4</td>
+</tr>
+<tr>
+<td class="r data">80.1633</td>
+<td class="r data">5</td>
+<td class="r data">99.0154</td>
+<td class="r data">7</td>
+</tr>
+<tr>
+<td class="r data">83.6186</td>
+<td class="r data">10</td>
+<td class="r data">107.9927</td>
+<td class="r data">9</td>
+</tr>
+<tr>
+<td class="r data">94.2506</td>
+<td class="r data">2</td>
+<td class="r data">129.0640</td>
+<td class="r data">3</td>
+</tr>
+<tr>
+<td class="r data">94.3055</td>
+<td class="r data">8</td>
+<td class="r data">136.4571</td>
+<td class="r data">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX5"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">10 Observations Plotted from the N(100, 15) distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Probability Plot for obs" src="ProbPlot.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX6"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">100 Observations Plotted from the N(100, 15) distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<div class="c proctitle">Variable:  obs</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Moments">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Moments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">N</th>
+<td class="r data">100</td>
+<th class="l rowheader" scope="row">Sum Weights</th>
+<td class="r data">100</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">100.108118</td>
+<th class="l rowheader" scope="row">Sum Observations</th>
+<td class="r data">10010.8118</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">15.5344233</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">241.318307</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Skewness</th>
+<td class="r data">0.03005384</td>
+<th class="l rowheader" scope="row">Kurtosis</th>
+<td class="r data" nowrap>-0.2495345</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Uncorrected SS</th>
+<td class="r data">1026054.05</td>
+<th class="l rowheader" scope="row">Corrected SS</th>
+<td class="r data">23890.5124</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Coeff Variation</th>
+<td class="r data">15.5176459</td>
+<th class="l rowheader" scope="row">Std Error Mean</th>
+<td class="r data">1.55344233</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX7"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Basic Measures of Location and Variability">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Statistical Measures</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location</th>
+<th class="c b header" colspan="2" scope="colgroup">Variability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">100.1081</td>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">15.53442</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Median</th>
+<td class="r data">98.9439</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">241.31831</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mode</th>
+<td class="r data">.</td>
+<th class="l rowheader" scope="row">Range</th>
+<td class="r data">71.36168</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="l rowheader" scope="row">Interquartile Range</th>
+<td class="r data">19.70865</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX8"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Tests For Location">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests&nbsp;for&nbsp;Location:&nbsp;Mu0=0</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Student&#39;s t</th>
+<th class="l rowheader" scope="row">t</th>
+<td class="r data">64.44276</td>
+<th class="l rowheader" scope="row">Pr &gt; |t|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Sign</th>
+<th class="l rowheader" scope="row">M</th>
+<td class="r data">50</td>
+<th class="l rowheader" scope="row">Pr &gt;= |M|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Signed Rank</th>
+<th class="l rowheader" scope="row">S</th>
+<td class="r data">2525</td>
+<th class="l rowheader" scope="row">Pr &gt;= |S|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX9"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Quantiles">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Quantiles&nbsp;(Definition&nbsp;5)</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Level</th>
+<th class="r b header" scope="col">Quantile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">100% Max</th>
+<td class="r data">134.9936</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">99%</th>
+<td class="r data">134.4677</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">95%</th>
+<td class="r data">127.0088</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">90%</th>
+<td class="r data">120.9610</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">75% Q3</th>
+<td class="r data">110.2020</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">50% Median</th>
+<td class="r data">98.9439</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">25% Q1</th>
+<td class="r data">90.4933</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">10%</th>
+<td class="r data">78.9843</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">5%</th>
+<td class="r data">73.6624</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">1%</th>
+<td class="r data">64.2160</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">0% Min</th>
+<td class="r data">63.6319</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX10"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Extreme Observations">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Observations</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">63.6319</td>
+<td class="r data">51</td>
+<td class="r data">128.327</td>
+<td class="r data">21</td>
+</tr>
+<tr>
+<td class="r data">64.8002</td>
+<td class="r data">71</td>
+<td class="r data">128.826</td>
+<td class="r data">37</td>
+</tr>
+<tr>
+<td class="r data">70.8777</td>
+<td class="r data">68</td>
+<td class="r data">133.392</td>
+<td class="r data">49</td>
+</tr>
+<tr>
+<td class="r data">72.5295</td>
+<td class="r data">77</td>
+<td class="r data">133.942</td>
+<td class="r data">27</td>
+</tr>
+<tr>
+<td class="r data">73.0065</td>
+<td class="r data">48</td>
+<td class="r data">134.994</td>
+<td class="r data">75</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX11"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">100 Observations Plotted from the N(100, 15) distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Probability Plot for obs" src="ProbPlot1.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX12"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">10 Observations Plotted from the LOGNORMAL distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<div class="c proctitle">Variable:  obs</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Moments">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Moments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">N</th>
+<td class="r data">10</td>
+<th class="l rowheader" scope="row">Sum Weights</th>
+<td class="r data">10</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">1.43628036</td>
+<th class="l rowheader" scope="row">Sum Observations</th>
+<td class="r data">14.3628036</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">1.23400582</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">1.52277036</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Skewness</th>
+<td class="r data">1.71017496</td>
+<th class="l rowheader" scope="row">Kurtosis</th>
+<td class="r data">2.81338971</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Uncorrected SS</th>
+<td class="r data">34.3339461</td>
+<th class="l rowheader" scope="row">Corrected SS</th>
+<td class="r data">13.7049332</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Coeff Variation</th>
+<td class="r data">85.9167783</td>
+<th class="l rowheader" scope="row">Std Error Mean</th>
+<td class="r data">0.3902269</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX13"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Basic Measures of Location and Variability">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Statistical Measures</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location</th>
+<th class="c b header" colspan="2" scope="colgroup">Variability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">1.436280</td>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">1.23401</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Median</th>
+<td class="r data">1.026059</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">1.52277</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mode</th>
+<td class="r data">.</td>
+<th class="l rowheader" scope="row">Range</th>
+<td class="r data">3.89467</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="l rowheader" scope="row">Interquartile Range</th>
+<td class="r data">1.24396</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX14"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Tests For Location">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests&nbsp;for&nbsp;Location:&nbsp;Mu0=0</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Student&#39;s t</th>
+<th class="l rowheader" scope="row">t</th>
+<td class="r data">3.680629</td>
+<th class="l rowheader" scope="row">Pr &gt; |t|</th>
+<td class="r data">0.0051</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Sign</th>
+<th class="l rowheader" scope="row">M</th>
+<td class="r data">5</td>
+<th class="l rowheader" scope="row">Pr &gt;= |M|</th>
+<td class="r data">0.0020</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Signed Rank</th>
+<th class="l rowheader" scope="row">S</th>
+<td class="r data">27.5</td>
+<th class="l rowheader" scope="row">Pr &gt;= |S|</th>
+<td class="r data">0.0020</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX15"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Quantiles">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Quantiles&nbsp;(Definition&nbsp;5)</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Level</th>
+<th class="r b header" scope="col">Quantile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">100% Max</th>
+<td class="r data">4.336455</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">99%</th>
+<td class="r data">4.336455</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">95%</th>
+<td class="r data">4.336455</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">90%</th>
+<td class="r data">3.506026</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">75% Q3</th>
+<td class="r data">1.764860</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">50% Median</th>
+<td class="r data">1.026059</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">25% Q1</th>
+<td class="r data">0.520904</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">10%</th>
+<td class="r data">0.465655</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">5%</th>
+<td class="r data">0.441788</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">1%</th>
+<td class="r data">0.441788</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">0% Min</th>
+<td class="r data">0.441788</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX16"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Extreme Observations">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Observations</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.441788</td>
+<td class="r data">9</td>
+<td class="r data">1.24757</td>
+<td class="r data">1</td>
+</tr>
+<tr>
+<td class="r data">0.489521</td>
+<td class="r data">4</td>
+<td class="r data">1.34013</td>
+<td class="r data">5</td>
+</tr>
+<tr>
+<td class="r data">0.520904</td>
+<td class="r data">3</td>
+<td class="r data">1.76486</td>
+<td class="r data">10</td>
+</tr>
+<tr>
+<td class="r data">0.741425</td>
+<td class="r data">8</td>
+<td class="r data">2.67560</td>
+<td class="r data">7</td>
+</tr>
+<tr>
+<td class="r data">0.804545</td>
+<td class="r data">2</td>
+<td class="r data">4.33646</td>
+<td class="r data">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX17"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">10 Observations Plotted from the LOGNORMAL distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Probability Plot for obs" src="ProbPlot2.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX18"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">100 Observations Plotted from the LOGNORMAL distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<div class="c proctitle">Variable:  obs</div>
+<p>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Moments">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Moments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">N</th>
+<td class="r data">100</td>
+<th class="l rowheader" scope="row">Sum Weights</th>
+<td class="r data">100</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">1.71690756</td>
+<th class="l rowheader" scope="row">Sum Observations</th>
+<td class="r data">171.690756</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">2.37255417</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">5.62901327</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Skewness</th>
+<td class="r data">3.94355845</td>
+<th class="l rowheader" scope="row">Kurtosis</th>
+<td class="r data">18.2620611</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Uncorrected SS</th>
+<td class="r data">852.04947</td>
+<th class="l rowheader" scope="row">Corrected SS</th>
+<td class="r data">557.272314</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Coeff Variation</th>
+<td class="r data">138.187647</td>
+<th class="l rowheader" scope="row">Std Error Mean</th>
+<td class="r data">0.23725542</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX19"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Basic Measures of Location and Variability">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Basic Statistical Measures</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Location</th>
+<th class="c b header" colspan="2" scope="colgroup">Variability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Mean</th>
+<td class="r data">1.716908</td>
+<th class="l rowheader" scope="row">Std Deviation</th>
+<td class="r data">2.37255</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Median</th>
+<td class="r data">1.000082</td>
+<th class="l rowheader" scope="row">Variance</th>
+<td class="r data">5.62901</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Mode</th>
+<td class="r data">.</td>
+<th class="l rowheader" scope="row">Range</th>
+<td class="r data">15.17714</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="l rowheader" scope="row">Interquartile Range</th>
+<td class="r data">1.30743</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX20"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Tests For Location">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Tests&nbsp;for&nbsp;Location:&nbsp;Mu0=0</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Test</th>
+<th class="c b header" colspan="2" scope="colgroup">Statistic</th>
+<th class="c b header" colspan="2" scope="colgroup">p Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">Student&#39;s t</th>
+<th class="l rowheader" scope="row">t</th>
+<td class="r data">7.236537</td>
+<th class="l rowheader" scope="row">Pr &gt; |t|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Sign</th>
+<th class="l rowheader" scope="row">M</th>
+<td class="r data">50</td>
+<th class="l rowheader" scope="row">Pr &gt;= |M|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">Signed Rank</th>
+<th class="l rowheader" scope="row">S</th>
+<td class="r data">2525</td>
+<th class="l rowheader" scope="row">Pr &gt;= |S|</th>
+<td class="r data">&lt;.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX21"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Quantiles">
+<colgroup>
+<col>
+</colgroup>
+<colgroup>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Quantiles&nbsp;(Definition&nbsp;5)</th>
+</tr>
+<tr>
+<th class="l b header" scope="col">Level</th>
+<th class="r b header" scope="col">Quantile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="l rowheader" scope="row">100% Max</th>
+<td class="r data">15.2411533</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">99%</th>
+<td class="r data">14.7185632</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">95%</th>
+<td class="r data">4.8875474</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">90%</th>
+<td class="r data">3.4225544</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">75% Q3</th>
+<td class="r data">1.8683393</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">50% Median</th>
+<td class="r data">1.0000816</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">25% Q1</th>
+<td class="r data">0.5609080</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">10%</th>
+<td class="r data">0.2929699</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">5%</th>
+<td class="r data">0.1856618</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">1%</th>
+<td class="r data">0.0976766</td>
+</tr>
+<tr>
+<th class="l rowheader" scope="row">0% Min</th>
+<td class="r data">0.0640118</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<a name="IDX22"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Univariate: Extreme Observations">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Extreme Observations</th>
+</tr>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Lowest</th>
+<th class="c b header" colspan="2" scope="colgroup">Highest</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+<th class="r b header" scope="col">Value</th>
+<th class="r b header" scope="col">Obs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.0640118</td>
+<td class="r data">11</td>
+<td class="r data">5.56975</td>
+<td class="r data">76</td>
+</tr>
+<tr>
+<td class="r data">0.1313414</td>
+<td class="r data">4</td>
+<td class="r data">7.00104</td>
+<td class="r data">66</td>
+</tr>
+<tr>
+<td class="r data">0.1744007</td>
+<td class="r data">96</td>
+<td class="r data">9.70693</td>
+<td class="r data">40</td>
+</tr>
+<tr>
+<td class="r data">0.1769021</td>
+<td class="r data">1</td>
+<td class="r data">14.19597</td>
+<td class="r data">98</td>
+</tr>
+<tr>
+<td class="r data">0.1829789</td>
+<td class="r data">94</td>
+<td class="r data">15.24115</td>
+<td class="r data">67</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX23"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle">100 Observations Plotted from the LOGNORMAL distribution</td>
+</tr>
+</table><br>
+<div class="c proctitle">The UNIVARIATE Procedure</div>
+<p>
+<div>
+<div  class="c">
+<img alt="Probability Plot for obs" src="ProbPlot3.png" style=" height: 480px; width: 640px;" border="0" class="c">
+</div>
+</div>
+<br>
+</div>
