@@ -1,0 +1,45 @@
+IN RESPONSE TO THE NUMBER OF CHILDCARE FACILITIES:
+
+Looking at the histogram of number of childcare facilities per zip code - Most zip codes have only a few childcare facilities; 12 or less. There are a few zip codes that have quite a few childcare facilities; up to 116. Because of this, the distribution is skewed right. 
+
+IN RESPONSE TO MERGING INCOME DATA WITH CHILDCARE FACILITY DATA:
+
+I was able to match only 982 zip codes out of 32,659. 31,652 zip codes are in the income file but not in the child care zip codes. I believe this is due to 2 reasons: 1. Not every zip code has child care facilities. 2. The income spreadsheet has a number of 4 digit zip codes in it; I believe this is because the variable is being stored as a number and has a leading 0, which is being omitted. 
+
+There were 25 zip codes that did not have any income data. One I found: 15674. It does not have a population, according to zip-codes.com. Without looking up all 25 I can't be sure, but it looks like these zip codes are lacking population.
+
+IN RESPONSE TO MERGING THE EDUCATION DATA WITH THE REST OF THE DATA:
+
+I was unable to find a way to download or read in directly the data from the website.
+
+
+IN RESPONSE TO CREATING NEW VARIABLES:
+
+Limiting my data to only those that I could merge - most zip codes have less than 1 childcare facility per 1000 people. There are a few zip codes that have a very low population that have much higher ratios of childcare facilities per 1000 people. Because of this, the distribution is skewed right. There are a handful of zip codes with ratios of 20 or higher. One zip code even has a ratio of ~140 child care facilities to 1000 people. 
+
+Also limiting my data to only those that I could merge - most zip codes have a income variability of less than 0.82. Very few have a 1 or higher; this is likely because there is usually a few people in each zip code who make far more than the "normal" person, which pulls the mean value higher than the median. I am guessing that these zip codes with income variability of 1 or higher are very poor zip codes; there are probably a large group of unemployed people with income of 0 that are bringing the average below the median.
+
+
+IN RESPONSE TO THE RELATIONSHIP OF MEAN AND MEDIAN INCOME:
+
+As the median income grows, it seems that so, too, does mean income. At the highest median, the mean income is nearly double the median. In these rich zip codes, it seems like the richest of the rich are MUCH richer than the rest, pulling the mean up. 
+
+Using the income variability gives you a normalized look at the how the mean is changing as the median grows. Many of the zip codes hover between 0.7 and 0.95 income variability. The mean in these zip codes are slightly higher than the median. These zip codes have some people making more money, pulling the average up, but not so much money that it puts them in another class. 
+
+IN RESPONSE TO THE RELATIONSHIP OF EDUCATION LEVEL AND INCOME:
+
+I was unable to obtain the education data. I would assume that the education level goes up as income goes up. That said, there are the Mark Zuckerberg's of the world that dropped out of college and made billions. I am guessing that his zip code would be an outlier to the trend.
+
+IN RESPONSE TO THE RELATIONSHIP BETWEEN NUMBER OF CHILD CARE FACILITIES AND HOUSEHOLD INCOME:
+
+It appears that there is a negative exponential relationship between income and child care facilities. As income increases, the number of child care facilities decreases. This makes perfect sense: As people have more money, they are able to afford in-home child care. 
+
+Looking at ccdens instead changes the relationship entirely. Most places have less than 10 child care facilities per 1000 people. While it still may be true that richer zip codes are caring for their children at home, these richer zip codes also appear to have similar density of child care facilities as the rest of the country. 
+
+IN RESPONSE TO PREDICTING THE THE NUMBER OF CHILDCARE FACILITIES BASED ON MEDIAN INCOME:
+
+Not having the education data presumably is hurting this model quite a bit. The R-squared value that came of the model I created is only 0.01. 
+
+To comment on the model assumptions: It is not clear to me that there is a linear relationship between count of childcare facilities and median income. The residuals are certainly not normally distributed or of equal variance. 
+
+At the very least, this data needs some transformation in order to fit a linear model. 
