@@ -1,0 +1,13 @@
+Jacob Rozran
+Project Proposal
+Due: March 27, 2017
+
+Project Goal:
+
+Through a simulation of traffic through an intersection, I want to optimize the logic of the light. Far too often, I am stuck waiting for minutes at a red light when I am the only car at the intersection. 
+
+Overview:
+
+Several scenarios will be simulated. For example, does a car enter the simulation or not? This will be done through a random sample from the normal distribution - a car will enter if the probability of that drawing is less than or equal (left tail comparison) to configurable threshold based on the number of cars per hour expected in the simulation. Another example: how fast is the car traveling when it enters the simulation and what is it's maximum speed? Maximum speed will be calculated based on a random sample from a normal distribution with a center at the speed limit and appropriate standard deviation calculated based on the supposed minimum and/or maximum speed on the road. How fast it is going in the simulation will be based on its maximum speed and the speed of any car(s) in front of it and the color of the light. 
+
+The results of the simulation will be the total time of all cars spent in the simulation. We can compare different light timing strategies to see which work best. Other factors can be compared, such as average time per car in the simulation and variance of time per car. 
